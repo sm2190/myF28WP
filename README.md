@@ -2,7 +2,7 @@
 
 # My Website Repository
 
-This repository contains the files for my personal website.
+This repository contains the files for the website.
 
 ## Contents
 
