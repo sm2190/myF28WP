@@ -104,5 +104,21 @@
       <p>&copy; 2024 Wanderlust Voyages | Travel Agency. All rights reserved.</p>
     </footer>
   </div>
+
+  <script>
+    const navbar = document.querySelector('nav');
+    const navbarOffset = navbar.offsetTop;
+
+    function sticky(){
+      if(window.pageYOffset >= navbarOffset){
+        navbar.classList.add('sticky');
+      }
+      else{
+        navbar.classList.remove('sticky');
+      }
+    }
+
+    window.addEventListener('scroll',sticky)
+  </script>
 </body>
 </html>
