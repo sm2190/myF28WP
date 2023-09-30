@@ -55,6 +55,10 @@ nav a {
     text-decoration: none;
     transition: background-color 0.3s;  /* Smooth transition for hover effect */
 }
+nav ul li.active a{
+    background-color: #9acbff;
+    color: #f6b7b7;
+}
 
 nav a:hover {
     background-color: #505050;  /* Darker shade for hover */
