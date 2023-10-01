@@ -39,6 +39,7 @@ nav ul {
     list-style-type: none;
     margin: 0;
     padding: 20px;
+    z-index: 100;
     position: sticky;
     top: 0px;
 }
