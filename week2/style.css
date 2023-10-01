@@ -32,6 +32,11 @@ header {
 
 
 /* Navigation Styles */
+nav {
+    position: sticky;
+    top: 0px;
+}
+
 nav ul {
     background-color: #333;
     color: #fff;
@@ -39,9 +44,6 @@ nav ul {
     list-style-type: none;
     margin: 0;
     padding: 20px;
-    z-index: 100;
-    position: sticky;
-    top: 0px;
 }
 
 nav li {
