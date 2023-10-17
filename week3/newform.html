@@ -92,7 +92,7 @@
         const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
       const validEmail =  validateField(email, 'Invalid Email Format',email.value.trim() === '' || !emailRegex.test(email.value));
       const validPassword = validateField(password, 'Password required',password.value === '' || password.value.length < 8);
-      const validConfirmPassword = validateField(confirmPassword, 'Passwords don not match',confirmPassword.value === '' || confirmPassword.value !== password.value );
+      const validConfirmPassword = validateField(confirmPassword, 'Passwords do not match',confirmPassword.value === '' || confirmPassword.value !== password.value );
 
         if(validUsername && validEmail && validPassword && validConfirmPassword){
             form.submit();
