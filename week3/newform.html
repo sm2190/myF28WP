@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lamg = "en">
+    <head>
+        <link rel = "preconnect" href = "https://fonts.googleapis.com">
+        <link rel = "preconnect" href = "https://fonts.gstatic.com" crossorigin>
+        <link href = "https://fonts.googleapis.com/css?family=Gabarito&family=Moontserrat:wght@900&display=swap" rel=" stylesheet">
+        <meta charset = "UTF-8">
+        <title>
+            Gallery - Wanderlust Voyages
+        </title>
+        <link rel ="stylesheet" href="style.css">
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+
+
+<body>
+    <form id = "form" action="/">
+        <div class = "input-control">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username">
+            <div class="error">
+
+            </div>
+
+            <button type="submit" value="submit">Submit</button>
+        </div>
+    </form>
+
+
+<script>
+    const form = document.getElementById('form');
+    const username = document.getElementById('username');
+
+
+
+    form.addEventListener('submit', event=> {
+        event.preventDefault();
+
+        validateInputs();
+    })
+
+
+    const setError = (element, message) =>{    
+        const inputControl = element.parentElement;
+        const errorDisplay = inputControl.querySelector('.error');
+
+        errorDisplay.innerText = message;
+        inputControl.classList.add('error');
+        inputControl.classList.remove('success');
+    }
+
+    const setSuccess = element =>{
+        const inputControl = element.parentElement;
+        const errorDisplay = inputControl.querySelector('.error');
+
+        errorDisplay.innerText = '';
+        inputControl.classList.add('success');
+        inputControl.classList.remove('error');
+    }
+
+    const validateInputs = () => {
+
+        const usernameValue = username.value.trim();
+
+        if (ussername === ''){
+            setError(username, 'username is required');
+        } else{
+            setSuccess(username);
+        }
+    }
+</script>
+</body>
