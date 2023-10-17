@@ -252,7 +252,7 @@ background color, border radius for rounded corners, and font size */
     border-radius: 4px; /* Rounded corners for the inputs */
     display: block; /* Display input field as a block */
     font-size: 12px; /* Text size within the input field */
-    padding: 10px; /* Space inside the input field */
+    padding: 6px; /* Space inside the input field */
     width: 100%; /* Input field takes up 100% of the form's width */
     }
     /* Remove focus outline from input fields */
