@@ -14,29 +14,59 @@
 
 <body>
     <form id = "form" action="/">
-        <div class = "input-control">
+            <div class = "input-control">
             <label for="username">Username:</label>
-            <input type="text" id="username" name="username">
-            <div class="error">
+            <input type="text" id="username" name="username" required>
+            <div class="error" id="username-error"></div>
+            </div>
 
+            <div class = "input-control">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <div class="error" id="email-error"></div>
+            </div>
+
+            <div class = "input-control">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <div class="error" id="password-error"></div>
+            </div>
+
+            <div class = "input-control">
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" id="confirm-password" name="confirm-password" required>
+            <div class="error" id="confirm-password-error"></div>
             </div>
 
             <button type="submit" value="submit">Submit</button>
-        </div>
     </form>
+
+
+
+
 
 
 <script>
     const form = document.getElementById('form');
     const username = document.getElementById('username');
-
+    const email = document.getElementById('email');
+    const password = document.getElementById('password');
+    const confirmPassword = document.getElementById('confirm-password');
 
 
     form.addEventListener('submit', event=> {
         event.preventDefault();
-
         validateInputs();
-    })
+    });
+
+
+    const validateField = (element, errorMessage, condition) =>{
+        if(condition){
+            setError(element, errorMessage);
+        } else{
+            setSuccess(element);
+        }
+    }
 
 
     const setError = (element, message) =>{    
@@ -58,13 +88,14 @@
     }
 
     const validateInputs = () => {
+      const validUsername = validateField(username, 'Username required',username.value.trim()=== '');
+        const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+      const validEmail =  validateField(email, 'Invalid Email Format',email.value.trim() === '' || !emailRegex.test(email.value));
+      const validPassword = validateField(password, 'Password required',password.value === '' || password.value.length < 8);
+      const validConfirmPassword = validateField(confirmPassword, 'Passwords don not match',confirmPassword.value === '' || confirmPassword.value !== password.value );
 
-        const usernameValue = username.value.trim();
-
-        if (ussername === ''){
-            setError(username, 'username is required');
-        } else{
-            setSuccess(username);
+        if(validUsername && validEmail && validPassword && validConfirmPassword){
+            form.submit();
         }
     }
 </script>
