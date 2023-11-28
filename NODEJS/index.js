@@ -35,15 +35,11 @@ app.set('view engine', 'hbs');
 
 
 
-app.get ("/", (req, res) => { 
-    res.render("index")
-    });
+app.use("/", require('./routes/pages'));
+app.use("/auth", require('./routes/auth'));
+ 
 
-app.get ("/register", (req, res) => { 
-        res.render("register")
-        });
+app.listen (port, () =>{
+    console.log('Server started on port ${port}');
 
-    app.listen (port, () =>{
-        console.log('Server started on port ${port}');
-
-    });
+});
